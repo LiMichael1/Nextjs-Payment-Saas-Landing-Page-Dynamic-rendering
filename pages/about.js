@@ -1,19 +1,18 @@
 import NavBar from '../components/layout/NavBar';
 import Footer from '../components/layout/Footer';
-import Body from '../components/pages/Body';
-import HomeComp from '../components/pages/HomeComp';
+import AboutComp from '../components/pages/AboutComp';
 
-const Home = ({ data: { appData } }) => {
+const About = ({ data: { appData } }) => {
   return (
     <div>
       <NavBar />
-      <HomeComp data={appData} />
+      <AboutComp data={appData} />
       <Footer />
     </div>
   );
 };
 
-export default Home;
+export default About;
 
 export async function getStaticProps() {
   const res = await fetch('http://localhost:3000/api/firstTaskData');
