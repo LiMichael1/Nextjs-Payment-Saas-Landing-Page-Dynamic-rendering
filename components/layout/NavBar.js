@@ -3,6 +3,13 @@ import Image from 'next/image';
 import Logo from './Logo';
 
 const NavBar = () => {
+  const handleDownload = async () => {
+    const response = await fetch('http://localhost:3000/api/downloadCount');
+    const data = await response.json();
+
+    console.log(data);
+  };
+
   return (
     <nav className='navbar'>
       <div className='leftNav'>
@@ -31,7 +38,7 @@ const NavBar = () => {
         </ul>
       </div>
       <div className='rightNav'>
-        <button>Download</button>
+        <button onClick={handleDownload}>Download</button>
       </div>
     </nav>
   );
